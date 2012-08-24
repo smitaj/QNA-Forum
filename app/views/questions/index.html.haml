@@ -1,0 +1,25 @@
+#add
+  = link_to image_tag('/assets/add_button.jpeg'), new_question_path
+%table.q_list
+  %tr
+    %th No
+    %th Posted By
+    %th Title
+    %th Question
+    %th
+  - @questions.each do |question|
+    %tr
+      %td{:width=>"10px;"}
+        = question.id
+      %td{:width=>"50px;"}
+        = link_to question.name, :controller => 'questions', :action => 'send_email', :id => question.id, :method => :post
+      %td{:width=>"170px;"}
+        = question.title
+      %td{:width=>"40%;"}
+        = link_to question.question.html_safe,  question
+      %td{:width=>"10%;"}
+        = link_to image_tag('/assets/images.jpeg', :style =>"padding-right:8px;"), edit_question_path(question)
+        = link_to image_tag('/assets/delete-button.png'), question, :method =>  :delete,  :confirm  =>  "Are You Sure?"
+.paginate
+  = will_paginate @questions, :class => "digg_pagination"
+  

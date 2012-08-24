@@ -1,0 +1,28 @@
+#blueBar
+  .loggedout_menubar_container
+#globalContainer
+  #content
+    %h2 Sign up
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      %table
+        %tr
+          %td Email
+        %tr
+          %td
+            = f.email_field :email, :class => "inputtext"
+        %tr
+          %td Password
+        %tr
+          %td
+            = f.password_field :password, :class => "inputtext"
+        %tr
+          %td Password Confirmation
+        
+        %tr
+          %td
+            = f.password_field :password_confirmation,  :class => "inputtext"
+        %tr
+          %td
+            = f.submit "Sign up", :id =>  "login-button"
+      = render "devise/shared/links"

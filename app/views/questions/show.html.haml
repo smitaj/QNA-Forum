@@ -1,0 +1,11 @@
+%table.q_list
+  %tr
+    %td
+      = @question.question.html_safe
+.ans-list
+  - @question.answers.each do |f|
+    = render :partial =>  "answer", :locals => {:answer  =>  f  } 
+%table
+  %tr
+    %td
+      = render  :partial  =>  "answers/form"
