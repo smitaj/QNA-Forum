@@ -1,0 +1,13 @@
+%table{:width=>"100%;"}
+  %tr
+    %td{:style  =>  "font-weight:bold;"} Question
+  %tr
+    %td
+      = @question.question.html_safe 
+  %tr
+    %td{:style  =>  "font-weight:bold;"} Answers:
+  - @question.answers.each do |ans|
+    %tr
+      %td
+        = ans.answer.html_safe rescue ""
+    

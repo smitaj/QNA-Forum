@@ -1,0 +1,29 @@
+#blueBar
+  .loggedout_menubar_container
+    .clearfix.loggedout_menubar
+      .rfloat
+        .menu_login_container
+          = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+            %table
+              %tr
+                %td
+                %td.html7magic 
+                  %label
+                    Email
+                %td.html7magic
+                  %label
+                    Password
+              %tr
+                %td#reg
+                  = link_to "Register", new_user_registration_path
+                %td
+                  = f.email_field :email, :class => "inputtext"
+                %td
+                  = f.password_field :password, :class => "inputtext"
+                %td
+                  = f.submit "Log In",  :class => "button" ,  :id =>  "login-button"
+#ask
+  = link_to "Ask Question", new_question_path
+#globalContainer
+  %img{:alt => "Pulpit rock", :src => "/assets/qna1.jpg"}
+  

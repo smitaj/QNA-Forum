@@ -1,0 +1,18 @@
+.ans-content
+  %p
+    %b 
+      = answer.id
+      Answer
+    %hr
+    %br
+    = answer.answer.html_safe
+  .rate_val
+    = answer.rating rescue ""
+  %div.star_rating
+    RATE IT:
+    %section.container{:rel => answer.id }
+      %input.rating{:name => "example", :type => "radio", :value => "1"}/
+      %input.rating{:name => "example", :type => "radio", :value => "2"}/
+      %input.rating{:name => "example", :type => "radio", :value => "3"}/
+      %input.rating{:name => "example", :type => "radio", :value => "4"}/
+      %input.rating{:name => "example", :type => "radio", :value => "5"}/

@@ -1,0 +1,13 @@
+= form_for(Answer.new, :remote => true ) do  |a|
+  %table.ans
+    %tr
+      %td.text1  Your Answer
+    %tr
+      %td
+        = a.text_area  :answer, :rows	=>	"3", :id	=>	"input"
+        .errors
+        = a.hidden_field :question_id, :value => @question.id
+    %tr
+      %td
+        = a.submit "Post Your Answer", :class => "button"
+

@@ -1,0 +1,21 @@
+= form_for(@question) do  |q|
+  %table.question
+    %tr
+      %td Title
+    %tr
+      %td
+        = q.text_field  :title
+    %tr
+      %td Posted By
+    %tr
+      %td
+        = q.text_field  :name
+    %tr
+      %td  Your Question
+    %tr
+      %td
+        = q.text_area  :question, :rows	=>	"3", :id	=>	"input"
+    %tr
+      %td
+        = q.submit "Submit", :class => "button"
+
